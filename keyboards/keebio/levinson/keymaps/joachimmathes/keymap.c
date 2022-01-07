@@ -8,11 +8,13 @@
 #define _BASE 0
 #define _LOWER 1
 #define _RAISE 2
+#define _ADJUST 16
 
 enum custom_keycodes {
   BASE = SAFE_RANGE,
   LOWER,
   RAISE,
+  ADJUST,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -25,14 +27,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|    |------+------+------+------+------+------|
  * | Shift|   Y  |   X  |   C  |   V  |   B  |    |   N  |   M  |   ,  |   .  |   -  |   Ä  |
  * |------+------+------+------+------+------|    |------+------+------+------+------+------|
- * | Esc  |      | GUI  | Alt  |Lower |Space |    |Space |Raise | Del  |Print |   ß  |   Ü  |
+ * | Esc  |Adjust| GUI  | Alt  |Lower |Space |    |Space |Raise | Del  |Print |   ß  |   Ü  |
  * `-----------------------------------------'    `-----------------------------------------'
  */
 [_BASE] = LAYOUT_ortho_4x12( \
-  KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,    DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC, \
-  KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,    DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, KC_ENT, \
-  KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,    DE_N,    DE_M,    DE_COMM, DE_DOT,  DE_MINS, DE_ADIA, \
-  KC_ESC,  _______, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_DEL,  KC_PSCR, DE_SS,   DE_UDIA \
+  KC_TAB,  DE_Q,   DE_W,    DE_E,    DE_R,  DE_T,   DE_Z,   DE_U,  DE_I,    DE_O,    DE_P,    KC_BSPC, \
+  KC_LCTL, DE_A,   DE_S,    DE_D,    DE_F,  DE_G,   DE_H,   DE_J,  DE_K,    DE_L,    DE_ODIA, KC_ENT, \
+  KC_LSFT, DE_Y,   DE_X,    DE_C,    DE_V,  DE_B,   DE_N,   DE_M,  DE_COMM, DE_DOT,  DE_MINS, DE_ADIA, \
+  KC_ESC,  ADJUST, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_SPC, RAISE, KC_DEL,  KC_PSCR, DE_SS,   DE_UDIA \
 ),
 
 /* Lower
@@ -71,6 +73,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   DE_LABK, DE_RABK, KC_LGUI, KC_LALT, _______, _______, _______, _______, KC_0, DE_DOT, _______, _______ \
 ),
 
+/* Adjust (Lower + Raise)
+ * ,-----------------------------------------.     ,-----------------------------------------.
+ * |      |RGB Tg|RGBRMd|RGB Md|Hue Dn|Hue Up|     |      |BL Tg |BL Dec|BL Inc|      |      |
+ * |------+------+------+------+------+------|     |------+------+------+------+------+------|
+ * |      |RGB MP|RGB MB|RGB MK|Sat Dn|Sat Up|     |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|     |------+------+------+------+------+------|
+ * |      |RGBMTW|      |      |Val Dn|Val Up|     |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|     |------+------+------+------+------+------|
+ * | Reset|      |      |      |      |      |     |      |      |      |      |      |      |
+ * |------+------+------+------+------+------'     `------+------+------+------+------+------|
+ */
+[_ADJUST] = LAYOUT_ortho_4x12( \
+  _______, RGB_TOG,  RGB_MOD, RGB_RMOD, RGB_HUD, RGB_HUI, _______, BL_TOGG, BL_DEC,  BL_INC,  _______, _______, \
+  _______, RGB_M_P,  RGB_M_B, RGB_M_K,  RGB_SAD, RGB_SAI, _______, _______, _______, _______, _______, _______, \
+  _______, RGB_M_TW, _______, _______,  RGB_VAD, RGB_VAI, _______, _______, _______, _______, _______, _______, \
+  RESET,   _______,  _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______ \
+)
 
 };
 
@@ -87,19 +106,37 @@ void persistent_default_layer_set(uint16_t default_layer) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case BASE:
+      if (record->event.pressed) {
+        persistent_default_layer_set(1UL<<_BASE);
+      }
+      return false;
+      break;
     case LOWER:
       if (record->event.pressed) {
         layer_on(_LOWER);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
         layer_off(_LOWER);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
       return false;
       break;
     case RAISE:
       if (record->event.pressed) {
         layer_on(_RAISE);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
         layer_off(_RAISE);
+        update_tri_layer(_LOWER, _RAISE, _ADJUST);
+      }
+      return false;
+      break;
+    case ADJUST:
+      if (record->event.pressed) {
+        layer_on(_ADJUST);
+      } else {
+        layer_off(_ADJUST);
       }
       return false;
       break;
