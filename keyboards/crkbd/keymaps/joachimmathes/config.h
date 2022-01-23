@@ -45,4 +45,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#define OLED_BRIGHTNESS 90
+#define OLED_BRIGHTNESS 40
+#define OLED_TIMEOUT 15000
+
+#define GRAPH_REFRESH_INTERVAL_MS 80
+#define GRAPH_LINE_THICKNESS_PX 3
+#define GRAPH_HORIZONTAL_LINE_INTERVAL 3
+#define GRAPH_VERTICAL_LINE_INTERVAL 10
