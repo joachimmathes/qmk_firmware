@@ -1,9 +1,20 @@
-/*
-This is the c configuration file for the keymap
+# Account joachimmathes
 
-Copyright 2012 Jun Wako <wakojun@gmail.com>
-Copyright 2015 Jack Humbert
-Copyright 2018 Danny Nguyen <danny@keeb.io>
+- [Ortholinear 4x12](../../layouts/community/ortho_4x12/joachimmathes/)
+- [Split 3x6 3](../../layouts/community/split_3x6_3/joachimmathes/)
+
+## Commands
+
+```sh
+make keebio/nyquist/rev3:joachimmathes[:flash]
+```
+```sh
+make crkbd:joachimmathes[:flash]
+```
+
+## Copyright
+
+Copyright 2022 Joachim Mathes joachim_mathes@web.de @joachimmathes
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,19 +28,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-#pragma once
-
-// #define USE_I2C
-
-/* Select hand configuration */
-// #define MASTER_RIGHT
-// #define EE_HANDS
-
-#undef RGBLED_NUM
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 12
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8

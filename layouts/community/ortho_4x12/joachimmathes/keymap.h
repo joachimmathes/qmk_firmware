@@ -1,0 +1,26 @@
+/* Copyright 2022 Joachim Mathes joachim_mathes@web.de @joachimmathes
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#pragma once
+
+#include QMK_KEYBOARD_H
+
+/* The variable argument is completely macro-expanded before it is inserted
+ * into the macro expansion.
+ * That is what we need here. Otherwise LAYOUT_ortho_4x12 will receive a
+ * single argument instead of 48.
+ */
+#define LAYOUT_ortho_4x12_wrapper(...) LAYOUT_ortho_4x12(__VA_ARGS__)
