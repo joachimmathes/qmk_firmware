@@ -17,8 +17,8 @@
 #include "joachimmathes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [LAYER0] = LAYOUT_ortho_4x12_wrapper(LAYOUT_LAYER0),
-    [LAYER1] = LAYOUT_ortho_4x12_wrapper(LAYOUT_LAYER1),
-    [LAYER2] = LAYOUT_ortho_4x12_wrapper(LAYOUT_LAYER2),
-    [LAYER3] = LAYOUT_ortho_4x12_wrapper(LAYOUT_LAYER3)
+    [LAYER0] = LAYOUT_ortho_4x10_to_ortho_4x12_wrapper(LAYOUT_LAYER0),
+    [LAYER1] = LAYOUT_ortho_4x10_to_ortho_4x12_wrapper(LAYOUT_LAYER1),
+    [LAYER2] = LAYOUT_ortho_4x10_to_ortho_4x12_wrapper(LAYOUT_LAYER2),
+    [LAYER3] = LAYOUT_ortho_4x10_to_ortho_4x12_wrapper(LAYOUT_LAYER3)
 };
