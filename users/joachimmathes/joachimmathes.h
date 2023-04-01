@@ -50,6 +50,6 @@ enum user_layers {
 
 #define LAYOUT_LAYER3 \
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   BL_TOGG,  RGB_TOG, RGB_MOD, RGB_RMOD, RGB_HUD,  RGB_HUI, \
-    KC_F5,   KC_F6,   KC_F7,   KC_F8,   BL_DEC,   RGB_M_P, RGB_M_B, RGB_M_K,  RGB_SAD,  RGB_SAI, \
-    KC_F9,   KC_F10,  KC_F11,  KC_F12,  BL_INC,   RGB_M_TW,XXXXXXX, XXXXXXX,  RGB_VAD,  RGB_VAI, \
+    KC_F5,   KC_F6,   KC_F7,   KC_F8,   BL_DOWN,  RGB_M_P, RGB_M_B, RGB_M_K,  RGB_SAD,  RGB_SAI, \
+    KC_F9,   KC_F10,  KC_F11,  KC_F12,  BL_UP,    RGB_M_TW,XXXXXXX, XXXXXXX,  RGB_VAD,  RGB_VAI, \
     XXXXXXX, XXXXXXX, KC_LCTL, _______, KC_SPC,   KC_RSFT, _______, KC_LALT,  XXXXXXX,  XXXXXXX
