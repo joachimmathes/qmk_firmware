@@ -51,5 +51,6 @@
 #ifdef OLED_ENABLE
 #    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #    define OLED_BRIGHTNESS 40
+#    undef OLED_TIMEOUT
 #    define OLED_TIMEOUT 15000
 #endif
