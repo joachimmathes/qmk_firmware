@@ -21,7 +21,7 @@
 /* The variable argument is completely macro-expanded before it is inserted
  * into the macro expansion.
  * That is what we need here. Otherwise LAYOUT_split_3x5_3_to_ortho_4x12
- * will receive a single argument instead of 40.
+ * will receive a single argument instead of 36.
  */
 #define LAYOUT_split_3x5_3_to_ortho_4x12_wrapper(...) LAYOUT_split_3x5_3_to_ortho_4x12(__VA_ARGS__)
 #define LAYOUT_split_3x5_3_to_ortho_4x12( \

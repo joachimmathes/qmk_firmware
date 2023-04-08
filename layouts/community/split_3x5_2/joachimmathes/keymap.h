@@ -21,15 +21,15 @@
 
 /* The variable argument is completely macro-expanded before it is inserted
  * into the macro expansion.
- * That is what we need here. Otherwise LAYOUT_ortho_4x10_to_split_3x5_2
- * will receive a single argument instead of 40.
+ * That is what we need here. Otherwise LAYOUT_split_3x5_2
+ * will receive a single argument instead of 34.
  */
-#define LAYOUT_ortho_4x10_to_split_3x5_2_wrapper(...) LAYOUT_ortho_4x10_to_split_3x5_2(__VA_ARGS__)
-#define LAYOUT_ortho_4x10_to_split_3x5_2( \
+#define LAYOUT_split_3x5_2_wrapper(...) LAYOUT_split_3x5_2_extract_arguments(__VA_ARGS__)
+#define LAYOUT_split_3x5_2_extract_arguments( \
     L00, L01, L02, L03, L04, R00, R01, R02, R03, R04, \
     L10, L11, L12, L13, L14, R10, R11, R12, R13, R14, \
     L20, L21, L22, L23, L24, R20, R21, R22, R23, R24, \
-    L30, L31, L32, L33, L34, R30, R31, R32, R33, R34 \
+    L33, L34, R30, R31 \
     ) \
     LAYOUT_split_3x5_2( \
         L00, L01, L02, L03, L04, R00, R01, R02, R03, R04, \

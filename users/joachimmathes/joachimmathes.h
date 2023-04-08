@@ -139,7 +139,7 @@ enum user_layers {
     DE_CIRC,  DE_HASH,  DE_PERC,  DE_BSLS,  DE_DEG,   DE_PLUS,  DE_7,     DE_8,     DE_9,     DE_MINS, \
     DE_EURO,  DE_DLR,   DE_EXLM,  DE_QUES,  DE_UNDS,  DE_ASTR,  DE_4,     DE_5,     DE_6,     DE_SLSH, \
     DE_PIPE,  DE_AT,    DE_TILD,  DE_AMPR,  DE_SECT,  DE_0,     DE_1,     DE_2,     DE_3,     DE_EQL, \
-                                  KC_L3,    KC_SPC,   KC_RSFT
+                                  KC_L3,    KC_SPC,   KC_RSFT, _______
 
 #define LAYOUT_SPLIT_3x5_2_LAYER2 \
     KC_TAB,   XXXXXXX,  DE_LCBR,  DE_RCBR,  DE_GRV,   KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_BSPC, \
