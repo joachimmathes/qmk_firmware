@@ -18,8 +18,8 @@
 #include "keymap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [LAYER0] = LAYOUT_ortho_4x10_to_split_3x6_3_wrapper(LAYOUT_LAYER0),
-    [LAYER1] = LAYOUT_ortho_4x10_to_split_3x6_3_wrapper(LAYOUT_LAYER1),
-    [LAYER2] = LAYOUT_ortho_4x10_to_split_3x6_3_wrapper(LAYOUT_LAYER2),
-    [LAYER3] = LAYOUT_ortho_4x10_to_split_3x6_3_wrapper(LAYOUT_LAYER3)
+    [LAYER0] = LAYOUT_split_3x5_3_to_split_3x6_3_wrapper(LAYOUT_SPLIT_3x5_3_LAYER0),
+    [LAYER1] = LAYOUT_split_3x5_3_to_split_3x6_3_wrapper(LAYOUT_SPLIT_3x5_3_LAYER1),
+    [LAYER2] = LAYOUT_split_3x5_3_to_split_3x6_3_wrapper(LAYOUT_SPLIT_3x5_3_LAYER2),
+    [LAYER3] = LAYOUT_split_3x5_3_to_split_3x6_3_wrapper(LAYOUT_SPLIT_3x5_3_LAYER3)
 };
