@@ -38,6 +38,7 @@
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 #    define RGB_MATRIX_HUE_STEP 8
 #    define RGB_MATRIX_SAT_STEP 8
@@ -49,6 +50,7 @@
 #endif
 
 #ifdef OLED_ENABLE
+#    undef OLED_FONT_H
 #    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #    define OLED_BRIGHTNESS 40
 #    undef OLED_TIMEOUT
