@@ -24,6 +24,17 @@ ifneq ($(filter $(strip $(KEYBOARD)),crkbd/rev1),)
 	RGB_MATRIX_ENABLE = yes
 	OLED_ENABLE = yes
 	OLED_DRIVER = SSD1306
+	OLED_LOGO = OLED_LOGO_SPLIT1
+	WPM_ENABLE = yes
+	SRC += oled.c
+endif
+
+ifneq ($(filter $(strip $(KEYBOARD)),splitkb/aurora/sweep),)
+	BOOTLOADER = rp2040
+	RGB_MATRIX_ENABLE = yes
+	OLED_ENABLE = yes
+	OLED_DRIVER = SSD1306
+	OLED_LOGO = OLED_LOGO_SPLIT2
 	WPM_ENABLE = yes
 	SRC += oled.c
 endif
