@@ -25,6 +25,8 @@ float max_wpm = 110.0f; // WPM value at the top of the graph window
 uint8_t vertical_count = 0;
 bool vertical_lines = false;
 
+static const char PROGMEM split_logo[] = {OLED_LOGO};
+
 void oled_render_logo(void) {
     oled_write_raw_P(split_logo, sizeof(split_logo));
 }

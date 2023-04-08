@@ -27,3 +27,7 @@ ifneq ($(filter $(strip $(KEYBOARD)),crkbd/rev1),)
 	WPM_ENABLE = yes
 	SRC += oled.c
 endif
+
+ifneq ($(filter $(OLED_LOGO),OLED_LOGO_SPLIT1 OLED_LOGO_SPLIT2 OLED_LOGO_SPLIT3),)
+    OPT_DEFS += -D$OLED_LOGO
+endif
