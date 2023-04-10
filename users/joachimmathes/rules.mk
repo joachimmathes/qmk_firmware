@@ -29,7 +29,7 @@ ifneq ($(filter $(strip $(KEYBOARD)),crkbd/rev1),)
 	SRC += oled.c
 endif
 
-ifneq ($(filter $(strip $(KEYBOARD)),splitkb/aurora/sweep),)
+ifneq ($(filter $(strip $(KEYBOARD)),splitkb/aurora/sweep/rev1),)
 	BOOTLOADER = rp2040
 	RGB_MATRIX_ENABLE = yes
 	OLED_ENABLE = yes
