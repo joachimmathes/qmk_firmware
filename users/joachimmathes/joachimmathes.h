@@ -30,17 +30,11 @@ enum user_layers {
 #define KC_L3 MO(LAYER3)
 #define LGUI_SPC LGUI_T(KC_SPC)
 #define LCTL_A LCTL_T(DE_A)
-#define LCTL_EUR LCTL_T(DE_EURO)
 #define LCTL_OE LCTL_T(DE_ODIA)
-#define LCTL_SLS LCTL_T(DE_SLSH)
 #define LALT_S LALT_T(DE_S)
-#define LALT_DLR LALT_T(DE_DLR)
 #define LALT_L LALT_T(DE_L)
-#define LALT_6 LALT_T(DE_6)
 #define GUIT_D LGUI_T(DE_D)
-#define GUIT_EXL LGUI_T(DE_EXLM)
 #define GUIT_K LGUI_T(DE_K)
-#define GUIT_5 LGUI_T(DE_5)
 
 /* --------------------------------------------------------------------------- */
 /* LAYOUT ORTHO 4x12                                                           */
@@ -143,7 +137,7 @@ enum user_layers {
 
 #define LAYOUT_SPLIT_3x5_2_LAYER2 \
     KC_TAB,   XXXXXXX,  DE_LCBR,  DE_RCBR,  DE_GRV,   KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_BSPC, \
-    LCTL_EUR, LALT_DLR, GUIT_EXL, DE_QUES,  DE_UNDS,  DE_ASTR,  DE_4,     GUIT_5,   LALT_6,   LCTL_SLS, \
+    KC_ESC,   XXXXXXX,  DE_LBRC,  DE_RBRC,  DE_DQUO,  KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RIGHT, KC_ENT, \
     DE_LABK,  DE_RABK,  DE_LPRN,  DE_RPRN,  DE_QUOT,  KC_PSCR,  DE_SS,    DE_ADIA,  DE_UDIA,  KC_DEL, \
                                   _______,  KC_SPC,   KC_RSFT,  KC_L3
 
