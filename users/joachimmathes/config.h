@@ -54,6 +54,8 @@
 #    undef OLED_FONT_H
 #    define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 #    define OLED_BRIGHTNESS 40
+#    define SPLIT_OLED_ENABLE
+#    define OLED_DISABLE_TIMEOUT
 #    undef OLED_TIMEOUT
-#    define OLED_TIMEOUT 15000
+#    define OLED_TIMEOUT 5000
 #endif
