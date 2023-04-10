@@ -34,7 +34,7 @@ void oled_render_logo(void) {
 void oled_render_wpm(void) {
     current_wpm = get_current_wpm();
 
-    if(timer_elapsed(wpm_timer) > GRAPH_REFRESH_INTERVAL_MS) {
+    if(timer_elapsed(wpm_timer) > GRAPH_REFRESH_INTERVAL_MS && current_wpm > 0) {
 
 		y = 32 - ((current_wpm / max_wpm) * 32);
 
