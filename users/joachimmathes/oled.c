@@ -69,13 +69,20 @@ void oled_render_wpm(void) {
     }
 }
 
-bool oled_task_user(void) {
-  if (is_keyboard_master()) {
-      oled_render_wpm();
-    } else {
-      oled_render_logo();
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    if (is_keyboard_master()) {
+        return OLED_ROTATION_0;
     }
-    return false;
+    return rotation;
+}
+
+bool oled_task_user(void) {
+   if (is_keyboard_master()) {
+       oled_render_wpm();
+   } else {
+       oled_render_logo();
+   }
+   return false;
 }
 
 #endif // OLED_ENABLE
