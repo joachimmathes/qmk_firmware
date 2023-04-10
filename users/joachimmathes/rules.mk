@@ -39,6 +39,6 @@ ifneq ($(filter $(strip $(KEYBOARD)),splitkb/aurora/sweep/rev1),)
 	SRC += oled.c
 endif
 
-ifneq ($(filter $(OLED_LOGO),OLED_LOGO_SPLIT1 OLED_LOGO_SPLIT2 OLED_LOGO_SPLIT3),)
-    OPT_DEFS += -D$OLED_LOGO
+ifneq ($(filter $(OLED_LOGO),OLED_LOGO_SPLIT1 OLED_LOGO_SPLIT2 OLED_LOGO_SPLIT3 OLED_LOGO_SPLIT4),)
+    OPT_DEFS += -D$(OLED_LOGO)
 endif
