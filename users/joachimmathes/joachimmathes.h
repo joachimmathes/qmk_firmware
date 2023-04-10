@@ -25,6 +25,12 @@ enum user_layers {
     LAYER3,
 };
 
+enum custom_keycodes {
+    MY_M_HM = SAFE_RANGE,
+    MY_M_DR,
+    MY_M_SR,
+};
+
 #define KC_L1 MO(LAYER1)
 #define KC_L2 MO(LAYER2)
 #define KC_L3 MO(LAYER3)
@@ -142,7 +148,7 @@ enum user_layers {
                                   _______,  KC_SPC,   KC_RSFT,  KC_L3
 
 #define LAYOUT_SPLIT_3x5_2_LAYER3 \
-    KC_F1,    KC_F2,    KC_F3,    KC_F4,    BL_TOGG,  RGB_TOG,  RGB_MOD,  RGB_RMOD, RGB_HUD,  RGB_HUI, \
-    KC_F5,    KC_F6,    KC_F7,    KC_F8,    BL_DOWN,  RGB_M_P,  RGB_M_B,  RGB_M_K,  RGB_SAD,  RGB_SAI, \
-    KC_F9,    KC_F10,   KC_F11,   KC_F12,   BL_UP,    RGB_M_TW, XXXXXXX,  XXXXXXX,  RGB_VAD,  RGB_VAI, \
+    KC_F1,    KC_F2,    KC_F3,    KC_F4,    XXXXXXX,  RGB_TOG,  RGB_MOD,  RGB_RMOD, RGB_HUD,  RGB_HUI, \
+    KC_F5,    KC_F6,    KC_F7,    KC_F8,    XXXXXXX,  RGB_M_P,  RGB_M_B,  MY_M_HM,  RGB_SAD,  RGB_SAI, \
+    KC_F9,    KC_F10,   KC_F11,   KC_F12,   XXXXXXX,  MY_M_DR,  MY_M_SR,  XXXXXXX,  RGB_VAD,  RGB_VAI, \
                                   _______,  KC_SPC,   KC_RSFT,  _______

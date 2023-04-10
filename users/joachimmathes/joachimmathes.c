@@ -21,3 +21,21 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_dollar_key_override,
     NULL
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case MY_M_HM:
+        rgb_matrix_mode(RGB_MATRIX_TYPING_HEATMAP);
+        return false;
+        break;
+    case MY_M_DR:
+        rgb_matrix_mode(RGB_MATRIX_DIGITAL_RAIN);
+        return false;
+        break;
+    case MY_M_SR:
+        rgb_matrix_mode(RGB_MATRIX_SOLID_REACTIVE_SIMPLE);
+        return false;
+        break;
+  }
+  return true;
+}
